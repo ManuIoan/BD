@@ -1,0 +1,28 @@
+SELECT nume from ANGAJATI
+UNION DISTINCT
+SELECT nume FROM MANAGERI
+ORDER BY nume;
+Vom primi lista cu numele anagajatilor pentru ca anagajatii pot fi manageri.OKOKOKOKOK
+
+DIFERENTA
+SELECT nume FROM ANGAJATI as a
+WHERE NOT EXISTS(SELECT * FROM MANAGERI as s
+WHERE s.nume=a.nume);
+Vom primi lista cu angajatii care nu sunt manageri. OKOKOKOKOKOKOKOKOKOK
+
+
+SELECTIA
+SELECT nume,marca 
+FROM PRODUSE 
+WHERE pret>100 AND pret<800;OKOKOKOKOKOKOKOKOKOKOKOKKOKOKO
+
+
+Sa se afiseze toate tipurile de animale.
+PROIECTIA
+SELECT DISTINCT tip_animal 
+FROM ANIMALE;
+
+JONCTIUNE
+SELECT produse.nume,produse.nr_de_prod,furnizate_de.id_f, furnizate_de.nr_de_prod
+FROM PRODUSE
+LEFT JOIN furnizate_de  ON furnizate_de.cod=produse.cod;OKOKOKOKOKOKOKOK
